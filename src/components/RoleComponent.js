@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     },
     gradientContainer: {
         marginBottom: 20,
-        width: 160,
+        width: '45%',
         height: 250,
         alignSelf: 'center',
         borderRadius: 8,

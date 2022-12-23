@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         marginBottom: 10,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingRight: 5
     },
     labelContainer: {
         alignItems: 'baseline',

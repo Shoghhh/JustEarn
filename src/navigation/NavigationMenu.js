@@ -4,23 +4,21 @@ import { TouchableOpacity, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
-
+import OrdersScreen from '../screens/Home/OrdersScreen';
+import { SupportIcon, HomeIcon, MyOrdersIcon, NotificationsIcon, ProfileIcon } from '../assets/svgs/NavigationMenuSvgs';
+import OrdersNavigator from './OrdersNavigation';
 
 const Tab = createBottomTabNavigator();
 
 export default function NavigationMenu() {
   const tabBarStyle = {
-    position: 'absolute',
-    bottom: 25,
-    left: 10,
-    right: 10,
-    elevation: 0,
-    backgroundColor: 'transparent',
-    borderTopWidth: 0,
-    height: 53,
+    backgroundColor: '#17171F',
+    height: '9%',
+    borderTopWidth: 0.2,
   };
   return (
     <Tab.Navigator
+      initialRouteName='Home'
       screenOptions={({ route }) => ({
         tabBarShowLabel: false,
         activeTintColor: 'white',
@@ -29,74 +27,38 @@ export default function NavigationMenu() {
         tabBarStyle: tabBarStyle,
       })}>
       <Tab.Screen
-        name="Home"
-        component={HomeNavigator}
+        name="MyOrders"
+        component={OrdersNavigator}
         options={({ route }) => ({
-          // tabBarIcon: ({ focused }) => {
-          //   return (
-          //     <View style={{ marginLeft: 20 }}>
-          //       <TabBarIcon
-          //         focused={focused}
-          //         Icon={HomeIcon}
-          //         width={70}
-          //         text={'Главная'}
-          //       />
-          //     </View>
-          //   );
-          // },
-          tabBarStyle: tabBarStyle
+          tabBarIcon: ({ focused }) => <MyOrdersIcon focused={focused} />,
         })}
       />
       <Tab.Screen
-        name="Analizes"
-        component={AnalysisStackNavigation}
+        name="Chat"
+        component={OrdersNavigator}
         options={(route) => ({
-          // tabBarIcon: ({ focused }) => {
-          //   return (
-          //     <TabBarIcon
-          //       focused={focused}
-          //       Icon={AnalizesIcon}
-          //       width={90}
-          //       text={'Анализы и услуги'}
-          //     />
-          //   );
-          // },
-          tabBarStyle: tabBarStyle
+          tabBarIcon: ({ focused }) => <SupportIcon focused={focused} />,
         })}
       />
       <Tab.Screen
-        name="chat"
-        component={OnlainChat}
+        name="Home"
+        component={OrdersNavigator}
+        options={(route) => ({
+          tabBarIcon: ({ focused }) => <HomeIcon focused={focused} />,
+        })}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={OrdersNavigator}
         options={{
-          // tabBarIcon: ({ focused }) => {
-          //   return (
-          //     <TabBarIcon
-          //       focused={focused}
-          //       Icon={ChatIcon}
-          //       width={70}
-          //       text={'Онлайн чат'}
-          //     />
-          //   );
-          // },
+          tabBarIcon: ({ focused }) => <NotificationsIcon focused={focused} />,
         }}
       />
       <Tab.Screen
-        name="more"
-        component={MoreNavigator}
+        name="Profile"
+        component={OrdersNavigator}
         options={({ route }) => ({
-          // tabBarIcon: ({ focused }) => {
-          //   return (
-          //     <View style={{ marginRight: 40 }}>
-          //       <TabBarIcon
-          //         focused={focused}
-          //         Icon={MoreIcon}
-          //         width={50}
-          //         text={'Еще'}
-          //       />
-          //     </View>
-          //   );
-          // },
-          tabBarStyle: tabBarStyle
+          tabBarIcon: ({ focused }) => <ProfileIcon focused={focused} />,
         })}
       />
     </Tab.Navigator>

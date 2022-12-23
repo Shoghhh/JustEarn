@@ -20,7 +20,6 @@ export default function NewPhoneNumberScreen({ navigation }) {
                     Введите новый номер телефона
                 </Text>
                 <PhoneInput value={phoneNumber} onChange={setPhoneNumber} countryCode={countryCode} setCountryCode={setCountryCode} text={'Новый тел. номер'} />
-                {/* <Input value={phoneNumber} onChange={setPhoneNumber} inputType={'numeric'} label={'Новый тел. номер'} /> */}
                 <View style={{ marginTop: 60 }}>
                     <Button text={'Далее'} onPress={() => navigation.navigate('NewPhoneConfirmationScreen')} />
                 </View>
@@ -37,10 +36,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 25,
         backgroundColor: 'transparent',
         backgroundColor: '#17171f',
-        // alignItems: 'center'
     },
     resetPassword: {
-        fontSize: 36,
+        fontSize: 34,
         marginTop: 45,
         color: 'white',
         fontFamily: 'Montserrat-Bold',

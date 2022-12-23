@@ -20,11 +20,6 @@ const countries = [
 
 export default function PhoneInput({ value, onChange, countryCode, setCountryCode, text}) {
     const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        console.log(countryCode);
-    }, [countryCode])
-
     function formatAMNumber(value) {
         let x = value
             .replace(/\D/g, '')

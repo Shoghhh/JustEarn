@@ -30,14 +30,13 @@ export default function ForgotPasswordScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 100,
+        paddingTop: 110,
         paddingHorizontal: 25,
         backgroundColor: 'transparent',
         backgroundColor: '#17171f',
-        // alignItems: 'center'
     },
     resetPassword: {
-        fontSize: 36,
+        fontSize: 34,
         marginTop: 45,
         color: 'white',
         fontFamily: 'Montserrat-Bold',

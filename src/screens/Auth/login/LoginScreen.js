@@ -17,18 +17,17 @@ export default function LoginScreen({ navigation }) {
             <SafeAreaView style={styles.container}>
                 <BackgroundSvg Svg={WelcomeBackground} />
                 <Text style={styles.loginText}>Вход</Text>
-                <PhoneInput value={phoneNumber} onChange={setPhoneNumber} countryCode={countryCode} setCountryCode={setCountryCode} text={'Номер телефона'}/>
+                <PhoneInput value={phoneNumber} onChange={setPhoneNumber} countryCode={countryCode} setCountryCode={setCountryCode} text={'Номер телефона'} />
                 <Input value={password} onChange={setPassword} inputType={'default'} label={'Пароль'} secure />
                 <TouchableOpacity style={styles.forgotPass} onPress={() => navigation.navigate('ForgotPasswordScreen')}>
                     <Text style={styles.forgotPassText}>Забыли пароль?</Text>
                 </TouchableOpacity>
                 <View style={{ marginTop: 80 }}>
-                    <Button text={'Войти'} />
+                    <Button text={'Войти'} onPress={() => navigation.navigate('Menu')} />
                 </View>
             </SafeAreaView>
         </DismissKeyboard>
     )
-
 }
 
 const styles = StyleSheet.create({

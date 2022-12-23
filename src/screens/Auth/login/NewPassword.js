@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Text, SafeAreaView, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Text, SafeAreaView, StyleSheet, TouchableOpacity, View, ScrollView } from "react-native";
 import BackgroundSvg from "../../../components/Background";
 import Input from "../../../components/Input";
-import { WelcomeBackground } from "../../../assets/svgs/AuthSvgs";
+import { PopupBackground, WelcomeBackground } from "../../../assets/svgs/AuthSvgs";
 import Button from "../../../components/Button";
 import { DismissKeyboard } from "../../../components/DismissKeyboard";
 import Popup from "../../../components/Popup";
@@ -23,14 +23,16 @@ export default function NewPasswordScreen({ navigation }) {
         <DismissKeyboard>
             <SafeAreaView style={styles.container}>
                 <BackgroundSvg Svg={WelcomeBackground} />
-                <Text style={styles.resetPassword}>Задайте новый пароль</Text>
-                <Text style={styles.smallText}>Придумайте сложный пароль,содержащий строчные и прописные буквы,а так же цифры и символы</Text>
-                <Input value={newPassword} onChange={setNewPassword} inputType={'default'} label={'Новый пароль'} secure />
-                <Input value={confirmPass} onChange={setConfirmPass} inputType={'default'} label={'Повторите новый пароль'} secure />
-                <View style={{ marginTop: 60 }}>
-                    <Button text={'Подтвердить'} onPress={onPress} />
-                </View>
-                <Popup isVisible={isVisible} setIsVisible={setIsVisible} text={'Ваш пароль успешно изменён'} />
+                <ScrollView>
+                    <Text style={styles.resetPassword}>Задайте новый пароль</Text>
+                    <Text style={styles.smallText}>Придумайте сложный пароль,содержащий строчные и прописные буквы,а так же цифры и символы</Text>
+                    <Input value={newPassword} onChange={setNewPassword} inputType={'default'} label={'Новый пароль'} secure />
+                    <Input value={confirmPass} onChange={setConfirmPass} inputType={'default'} label={'Повторите новый пароль'} secure />
+                    <View style={{ marginTop: 60 }}>
+                        <Button text={'Подтвердить'} onPress={onPress} />
+                    </View>
+                </ScrollView>
+                <Popup isVisible={isVisible}  Background={PopupBackground} text={'Ваш пароль успешно изменён'} />
             </SafeAreaView>
         </DismissKeyboard>
     )

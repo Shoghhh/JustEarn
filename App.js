@@ -8,11 +8,11 @@ import { SplashBackground, JustEarnBig } from './src/assets/svgs/AuthSvgs';
 import { DismissKeyboard } from './src/components/DismissKeyboard';
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 2000);
+  //   setTimeout(() => {
+  //     setIsLoading(false)
+  //   }, 2000);
   }, [])
   return isLoading ?
     <SafeAreaView style={{ backgroundColor: '#17171f', flex: 1, justifyContent: 'center' }}>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text, SafeAreaView, StyleSheet, TouchableOpacity, View, ScrollView } from "react-native";
 import BackgroundSvg from "../../../components/Background";
-import { WelcomeBackground } from "../../../assets/svgs/AuthSvgs";
+import { PopupBackground, WelcomeBackground } from "../../../assets/svgs/AuthSvgs";
 import Button from "../../../components/Button";
 import CodeInputs from "../../../components/CodeInputs";
 import { DismissKeyboard } from "../../../components/DismissKeyboard";
@@ -39,7 +39,7 @@ export default function NewPhoneConfirmationScreen({ navigation }) {
                         <Button text={'Подтвердить'} onPress={onPress} />
                     </View>
                 </ScrollView>
-                <Popup isVisible={isVisible} setIsVisible={setIsVisible} text={'Ваш тел. номер. успешно изменён'} />
+                <Popup isVisible={isVisible}  Background={PopupBackground} text={'Ваш тел. номер успешно изменён'} />
             </SafeAreaView >
         </DismissKeyboard>
     )
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#17171f',
     },
     resetPassword: {
-        fontSize: 36,
+        fontSize: 34,
         marginTop: 45,
         color: 'white',
         fontFamily: 'Montserrat-Bold',

@@ -15,6 +15,7 @@ import ChangePhoneNumberScreen from '../screens/Auth/changePhone/ChangePhoneNumb
 import NewPhoneNumberScreen from '../screens/Auth/changePhone/NewPhoneNumberScreen';
 import NewPhoneConfirmationScreen from '../screens/Auth/changePhone/NewPhoneConfirmationScreen';
 import ChangePasswordScreen from '../screens/Auth/changePassword/ChangePasswordScreen';
+import NavigationMenu from './NavigationMenu';
 
 const Stack = createNativeStackNavigator();
 
@@ -162,6 +163,13 @@ const AppNavigation = ({ initialRouteName }) => {
                             <HeaderTitle navigation={navigation} title={' '} white />
                         ),
                     })}
+                />
+                <Stack.Screen
+                    name="Menu"
+                    component={NavigationMenu}
+                    options={{
+                        headerShown: false
+                    }}
                 />
             </Stack.Navigator>
         </NavigationContainer>

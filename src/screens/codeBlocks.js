@@ -23,13 +23,6 @@ export default function codeBlocks({ navigation }) {
                             <Text style={{ color: 'white', fontFamily: 'Montserrat-Regular', fontSize: 20 }}>Баланс</Text>
                             <Text style={{ color: '#C40B83', fontFamily: 'Montserrat-Bold', fontSize: 22, marginTop: 5 }}>1200 руб.</Text>
                         </View>
-                        <LinearGradient colors={['#521280', '#C40B83']}
-                            start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
-                            style={{ alignItems: 'center', borderRadius: 8, zIndex: 9999999 }}>
-                            <TouchableOpacity style={{ width: 35, height: 35, }}>
-                                <Text style={{ color: 'white', fontSize: 38, alignSelf: 'center', position: 'absolute', top: -10 }}>+</Text>
-                            </TouchableOpacity>
-                        </LinearGradient>
                     </View>
                 </View>
             </View> */}
@@ -63,9 +56,34 @@ export default function codeBlocks({ navigation }) {
                 </View>
             </LinearGradient > 
         */}
+
+
+
+        {/* imagevideo picker */}
+         {/* player.presentFullscreenPlayer()
+         launchImageLibrary(options, (response) => {
+         console.log('Response = ', response);
+             if (response.didCancel) {
+                 console.log('User cancelled image picker');
+             } else if (response.error) {
+                 console.log('ImagePicker Error: ', response.error);
+             } else if (response.customButton) {
+                 console.log(
+                     'User tapped custom button: ',
+                     response.customButton
+                 );
+                 alert(response.customButton);
+             } else {
+                 let source = response;
+                  You can also display the image using data:
+                  let source = {
+                    uri: 'data:image/jpeg;base64,' + response.data
+                  };
+                 setFilePath(source);
+             }
+         }); */}
         </SafeAreaView >
     )
-
 }
 
 const styles = StyleSheet.create({

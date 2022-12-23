@@ -17,9 +17,7 @@ export default function ChangePhoneNumberScreen({ navigation }) {
                 <BackgroundSvg Svg={WelcomeBackground} />
                 <Text style={styles.resetPassword}>Изменение номер телефона</Text>
                 <Text style={styles.smallText}>Чтобы изменить номер телефонa введите старый номер.</Text>
-                {/* <Input value={phoneNumber} onChange={setPhoneNumber} inputType={'numeric'} label={'Старый тел. номер'} /> */}
                 <PhoneInput value={phoneNumber} onChange={setPhoneNumber} countryCode={countryCode} setCountryCode={setCountryCode} text={'Старый тел. номер'}/>
-
                 <View style={{ marginTop: 60 }}>
                     <Button text={'Далее'} onPress={() => navigation.navigate('NewPhoneNumberScreen')} />
                 </View>
@@ -39,7 +37,7 @@ const styles = StyleSheet.create({
         // alignItems: 'center'
     },
     resetPassword: {
-        fontSize: 36,
+        fontSize: 34,
         marginTop: 45,
         color: 'white',
         fontFamily: 'Montserrat-Bold',

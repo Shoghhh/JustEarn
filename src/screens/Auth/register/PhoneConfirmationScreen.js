@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text, SafeAreaView, StyleSheet, TouchableOpacity, View, ScrollView } from "react-native";
 import BackgroundSvg from "../../../components/Background";
-import { WelcomeBackground } from "../../../assets/svgs/AuthSvgs";
+import { PopupBackground, WelcomeBackground } from "../../../assets/svgs/AuthSvgs";
 import Button from "../../../components/Button";
 import CodeInputs from "../../../components/CodeInputs";
 import { DismissKeyboard } from "../../../components/DismissKeyboard";
@@ -20,7 +20,7 @@ export default function PhoneConfirmationScreen({ navigation }) {
     function onPress() {
         setIsVisible(true)
         setTimeout(() => {
-            navigation.navigate('LoginScreen')
+            navigation.navigate('Menu')
             setIsVisible(false)
         }, 2000);
     }
@@ -40,7 +40,7 @@ export default function PhoneConfirmationScreen({ navigation }) {
                         <Button text={'Подтвердить'} onPress={onPress} />
                     </View>
                 </ScrollView>
-                <Popup isVisible={isVisible} setIsVisible={setIsVisible} text={'Вы успешно зарегистрировались'} />
+                <Popup isVisible={isVisible} Background={PopupBackground} text={'Вы успешно зарегистрировались'} />
             </SafeAreaView >
         </DismissKeyboard>
     )
